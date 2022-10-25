@@ -1,13 +1,13 @@
 import antlr4
 from antlr4.error.Errors import ParseCancellationException
 
-from j2j.exceptions import J2JSyntaxError
+from jertl.exceptions import JertlSyntaxError
 
 from .  import representation as jar
 from .  import helpers        as helpers
 from .. import parser         as jp
 
-class J2JBuilder(helpers.ASTBuilder, jp.Listener):
+class JertlBuilder(helpers.ASTBuilder, jp.Listener):
 
     def exitTransform(self, ctx):
         ctx.AST = jar.Transform(input=ctx.structure(0).AST,
@@ -91,7 +91,6 @@ def string_parser(string):
     #
     return parser
 
-
 def parse_string(string, rulename):
     parser = string_parser(string)
     rule   = getattr(parser, rulename)
@@ -99,7 +98,7 @@ def parse_string(string, rulename):
     return tree
 
 def ast_from_tree(tree, trace=False):
-    builder = J2JBuilder(trace=trace)
+    builder = JertlBuilder(trace=trace)
     walker  = antlr4.ParseTreeWalker()
     walker.walk(builder, tree)
     return tree.AST

@@ -1,4 +1,4 @@
-# Generated from J2J.g4 by ANTLR 4.11.1
+# Generated from Jertl.g4 by ANTLR 4.11.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -48,9 +48,9 @@ def serializedATN():
         115,116,5,16,0,0,116,27,1,0,0,0,10,35,41,48,63,71,76,82,97,104,108
     ]
 
-class J2JParser ( Parser ):
+class JertlParser ( Parser ):
 
-    grammarFileName = "J2J.g4"
+    grammarFileName = "Jertl.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -127,16 +127,16 @@ class J2JParser ( Parser ):
 
         def structure(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(J2JParser.StructureContext)
+                return self.getTypedRuleContexts(JertlParser.StructureContext)
             else:
-                return self.getTypedRuleContext(J2JParser.StructureContext,i)
+                return self.getTypedRuleContext(JertlParser.StructureContext,i)
 
 
         def IMPLIES(self):
-            return self.getToken(J2JParser.IMPLIES, 0)
+            return self.getToken(JertlParser.IMPLIES, 0)
 
         def getRuleIndex(self):
-            return J2JParser.RULE_transform
+            return JertlParser.RULE_transform
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTransform" ):
@@ -151,14 +151,14 @@ class J2JParser ( Parser ):
 
     def transform(self):
 
-        localctx = J2JParser.TransformContext(self, self._ctx, self.state)
+        localctx = JertlParser.TransformContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_transform)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 28
             self.structure()
             self.state = 29
-            self.match(J2JParser.IMPLIES)
+            self.match(JertlParser.IMPLIES)
             self.state = 30
             self.structure()
         except RecognitionException as re:
@@ -179,13 +179,13 @@ class J2JParser ( Parser ):
 
         def matcher(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(J2JParser.MatcherContext)
+                return self.getTypedRuleContexts(JertlParser.MatcherContext)
             else:
-                return self.getTypedRuleContext(J2JParser.MatcherContext,i)
+                return self.getTypedRuleContext(JertlParser.MatcherContext,i)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_collation
+            return JertlParser.RULE_collation
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCollation" ):
@@ -200,7 +200,7 @@ class J2JParser ( Parser ):
 
     def collation(self):
 
-        localctx = J2JParser.CollationContext(self, self._ctx, self.state)
+        localctx = JertlParser.CollationContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_collation)
         self._la = 0 # Token type
         try:
@@ -232,24 +232,24 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def IMPLIES(self):
-            return self.getToken(J2JParser.IMPLIES, 0)
+            return self.getToken(JertlParser.IMPLIES, 0)
 
         def matcher(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(J2JParser.MatcherContext)
+                return self.getTypedRuleContexts(JertlParser.MatcherContext)
             else:
-                return self.getTypedRuleContext(J2JParser.MatcherContext,i)
+                return self.getTypedRuleContext(JertlParser.MatcherContext,i)
 
 
         def setter(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(J2JParser.SetterContext)
+                return self.getTypedRuleContexts(JertlParser.SetterContext)
             else:
-                return self.getTypedRuleContext(J2JParser.SetterContext,i)
+                return self.getTypedRuleContext(JertlParser.SetterContext,i)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_rule_
+            return JertlParser.RULE_rule_
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRule_" ):
@@ -264,7 +264,7 @@ class J2JParser ( Parser ):
 
     def rule_(self):
 
-        localctx = J2JParser.Rule_Context(self, self._ctx, self.state)
+        localctx = JertlParser.Rule_Context(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_rule_)
         self._la = 0 # Token type
         try:
@@ -280,7 +280,7 @@ class J2JParser ( Parser ):
                 _la = self._input.LA(1)
 
             self.state = 44
-            self.match(J2JParser.IMPLIES)
+            self.match(JertlParser.IMPLIES)
             self.state = 48
             self._errHandler.sync(self)
             _la = self._input.LA(1)
@@ -308,18 +308,18 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def variable(self):
-            return self.getTypedRuleContext(J2JParser.VariableContext,0)
+            return self.getTypedRuleContext(JertlParser.VariableContext,0)
 
 
         def MATCHES(self):
-            return self.getToken(J2JParser.MATCHES, 0)
+            return self.getToken(JertlParser.MATCHES, 0)
 
         def structure(self):
-            return self.getTypedRuleContext(J2JParser.StructureContext,0)
+            return self.getTypedRuleContext(JertlParser.StructureContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_matcher
+            return JertlParser.RULE_matcher
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterMatcher" ):
@@ -334,14 +334,14 @@ class J2JParser ( Parser ):
 
     def matcher(self):
 
-        localctx = J2JParser.MatcherContext(self, self._ctx, self.state)
+        localctx = JertlParser.MatcherContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_matcher)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 51
             self.variable()
             self.state = 52
-            self.match(J2JParser.MATCHES)
+            self.match(JertlParser.MATCHES)
             self.state = 53
             self.structure()
         except RecognitionException as re:
@@ -361,18 +361,18 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def variable(self):
-            return self.getTypedRuleContext(J2JParser.VariableContext,0)
+            return self.getTypedRuleContext(JertlParser.VariableContext,0)
 
 
         def ASSIGNED(self):
-            return self.getToken(J2JParser.ASSIGNED, 0)
+            return self.getToken(JertlParser.ASSIGNED, 0)
 
         def structure(self):
-            return self.getTypedRuleContext(J2JParser.StructureContext,0)
+            return self.getTypedRuleContext(JertlParser.StructureContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_setter
+            return JertlParser.RULE_setter
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterSetter" ):
@@ -387,14 +387,14 @@ class J2JParser ( Parser ):
 
     def setter(self):
 
-        localctx = J2JParser.SetterContext(self, self._ctx, self.state)
+        localctx = JertlParser.SetterContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_setter)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 55
             self.variable()
             self.state = 56
-            self.match(J2JParser.ASSIGNED)
+            self.match(JertlParser.ASSIGNED)
             self.state = 57
             self.structure()
         except RecognitionException as re:
@@ -414,23 +414,23 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def obj(self):
-            return self.getTypedRuleContext(J2JParser.ObjContext,0)
+            return self.getTypedRuleContext(JertlParser.ObjContext,0)
 
 
         def array(self):
-            return self.getTypedRuleContext(J2JParser.ArrayContext,0)
+            return self.getTypedRuleContext(JertlParser.ArrayContext,0)
 
 
         def atom(self):
-            return self.getTypedRuleContext(J2JParser.AtomContext,0)
+            return self.getTypedRuleContext(JertlParser.AtomContext,0)
 
 
         def variable(self):
-            return self.getTypedRuleContext(J2JParser.VariableContext,0)
+            return self.getTypedRuleContext(JertlParser.VariableContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_structure
+            return JertlParser.RULE_structure
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStructure" ):
@@ -445,7 +445,7 @@ class J2JParser ( Parser ):
 
     def structure(self):
 
-        localctx = J2JParser.StructureContext(self, self._ctx, self.state)
+        localctx = JertlParser.StructureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_structure)
         try:
             self.state = 63
@@ -494,17 +494,17 @@ class J2JParser ( Parser ):
 
         def key_value(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(J2JParser.Key_valueContext)
+                return self.getTypedRuleContexts(JertlParser.Key_valueContext)
             else:
-                return self.getTypedRuleContext(J2JParser.Key_valueContext,i)
+                return self.getTypedRuleContext(JertlParser.Key_valueContext,i)
 
 
         def kwargs(self):
-            return self.getTypedRuleContext(J2JParser.KwargsContext,0)
+            return self.getTypedRuleContext(JertlParser.KwargsContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_obj
+            return JertlParser.RULE_obj
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterObj" ):
@@ -519,7 +519,7 @@ class J2JParser ( Parser ):
 
     def obj(self):
 
-        localctx = J2JParser.ObjContext(self, self._ctx, self.state)
+        localctx = JertlParser.ObjContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_obj)
         self._la = 0 # Token type
         try:
@@ -529,7 +529,7 @@ class J2JParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 65
-                self.match(J2JParser.T__0)
+                self.match(JertlParser.T__0)
                 self.state = 66
                 localctx._key_value = self.key_value()
                 localctx.key_values.append(localctx._key_value)
@@ -539,7 +539,7 @@ class J2JParser ( Parser ):
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
                         self.state = 67
-                        self.match(J2JParser.T__1)
+                        self.match(JertlParser.T__1)
                         self.state = 68
                         localctx._key_value = self.key_value()
                         localctx.key_values.append(localctx._key_value) 
@@ -552,21 +552,21 @@ class J2JParser ( Parser ):
                 _la = self._input.LA(1)
                 if _la==2:
                     self.state = 74
-                    self.match(J2JParser.T__1)
+                    self.match(JertlParser.T__1)
                     self.state = 75
                     self.kwargs()
 
 
                 self.state = 78
-                self.match(J2JParser.T__2)
+                self.match(JertlParser.T__2)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 80
-                self.match(J2JParser.T__0)
+                self.match(JertlParser.T__0)
                 self.state = 81
-                self.match(J2JParser.T__2)
+                self.match(JertlParser.T__2)
                 pass
 
 
@@ -587,14 +587,14 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def STRING(self):
-            return self.getToken(J2JParser.STRING, 0)
+            return self.getToken(JertlParser.STRING, 0)
 
         def structure(self):
-            return self.getTypedRuleContext(J2JParser.StructureContext,0)
+            return self.getTypedRuleContext(JertlParser.StructureContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_key_value
+            return JertlParser.RULE_key_value
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterKey_value" ):
@@ -609,14 +609,14 @@ class J2JParser ( Parser ):
 
     def key_value(self):
 
-        localctx = J2JParser.Key_valueContext(self, self._ctx, self.state)
+        localctx = JertlParser.Key_valueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_key_value)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 84
-            self.match(J2JParser.STRING)
+            self.match(JertlParser.STRING)
             self.state = 85
-            self.match(J2JParser.T__3)
+            self.match(JertlParser.T__3)
             self.state = 86
             self.structure()
         except RecognitionException as re:
@@ -636,11 +636,11 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def variable(self):
-            return self.getTypedRuleContext(J2JParser.VariableContext,0)
+            return self.getTypedRuleContext(JertlParser.VariableContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_kwargs
+            return JertlParser.RULE_kwargs
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterKwargs" ):
@@ -655,12 +655,12 @@ class J2JParser ( Parser ):
 
     def kwargs(self):
 
-        localctx = J2JParser.KwargsContext(self, self._ctx, self.state)
+        localctx = JertlParser.KwargsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_kwargs)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 88
-            self.match(J2JParser.T__4)
+            self.match(JertlParser.T__4)
             self.state = 89
             self.variable()
         except RecognitionException as re:
@@ -683,13 +683,13 @@ class J2JParser ( Parser ):
 
         def element(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(J2JParser.ElementContext)
+                return self.getTypedRuleContexts(JertlParser.ElementContext)
             else:
-                return self.getTypedRuleContext(J2JParser.ElementContext,i)
+                return self.getTypedRuleContext(JertlParser.ElementContext,i)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_array
+            return JertlParser.RULE_array
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray" ):
@@ -704,7 +704,7 @@ class J2JParser ( Parser ):
 
     def array(self):
 
-        localctx = J2JParser.ArrayContext(self, self._ctx, self.state)
+        localctx = JertlParser.ArrayContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_array)
         self._la = 0 # Token type
         try:
@@ -714,7 +714,7 @@ class J2JParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 91
-                self.match(J2JParser.T__5)
+                self.match(JertlParser.T__5)
                 self.state = 92
                 localctx._element = self.element()
                 localctx.elements.append(localctx._element)
@@ -723,7 +723,7 @@ class J2JParser ( Parser ):
                 _la = self._input.LA(1)
                 while _la==2:
                     self.state = 93
-                    self.match(J2JParser.T__1)
+                    self.match(JertlParser.T__1)
                     self.state = 94
                     localctx._element = self.element()
                     localctx.elements.append(localctx._element)
@@ -732,15 +732,15 @@ class J2JParser ( Parser ):
                     _la = self._input.LA(1)
 
                 self.state = 100
-                self.match(J2JParser.T__6)
+                self.match(JertlParser.T__6)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 102
-                self.match(J2JParser.T__5)
+                self.match(JertlParser.T__5)
                 self.state = 103
-                self.match(J2JParser.T__6)
+                self.match(JertlParser.T__6)
                 pass
 
 
@@ -761,15 +761,15 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def structure(self):
-            return self.getTypedRuleContext(J2JParser.StructureContext,0)
+            return self.getTypedRuleContext(JertlParser.StructureContext,0)
 
 
         def varargs(self):
-            return self.getTypedRuleContext(J2JParser.VarargsContext,0)
+            return self.getTypedRuleContext(JertlParser.VarargsContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_element
+            return JertlParser.RULE_element
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElement" ):
@@ -784,7 +784,7 @@ class J2JParser ( Parser ):
 
     def element(self):
 
-        localctx = J2JParser.ElementContext(self, self._ctx, self.state)
+        localctx = JertlParser.ElementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_element)
         try:
             self.state = 108
@@ -820,11 +820,11 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def variable(self):
-            return self.getTypedRuleContext(J2JParser.VariableContext,0)
+            return self.getTypedRuleContext(JertlParser.VariableContext,0)
 
 
         def getRuleIndex(self):
-            return J2JParser.RULE_varargs
+            return JertlParser.RULE_varargs
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterVarargs" ):
@@ -839,12 +839,12 @@ class J2JParser ( Parser ):
 
     def varargs(self):
 
-        localctx = J2JParser.VarargsContext(self, self._ctx, self.state)
+        localctx = JertlParser.VarargsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_varargs)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 110
-            self.match(J2JParser.T__7)
+            self.match(JertlParser.T__7)
             self.state = 111
             self.variable()
         except RecognitionException as re:
@@ -864,25 +864,25 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def NULL(self):
-            return self.getToken(J2JParser.NULL, 0)
+            return self.getToken(JertlParser.NULL, 0)
 
         def TRUE(self):
-            return self.getToken(J2JParser.TRUE, 0)
+            return self.getToken(JertlParser.TRUE, 0)
 
         def FALSE(self):
-            return self.getToken(J2JParser.FALSE, 0)
+            return self.getToken(JertlParser.FALSE, 0)
 
         def INTEGER(self):
-            return self.getToken(J2JParser.INTEGER, 0)
+            return self.getToken(JertlParser.INTEGER, 0)
 
         def FLOAT(self):
-            return self.getToken(J2JParser.FLOAT, 0)
+            return self.getToken(JertlParser.FLOAT, 0)
 
         def STRING(self):
-            return self.getToken(J2JParser.STRING, 0)
+            return self.getToken(JertlParser.STRING, 0)
 
         def getRuleIndex(self):
-            return J2JParser.RULE_atom
+            return JertlParser.RULE_atom
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAtom" ):
@@ -897,7 +897,7 @@ class J2JParser ( Parser ):
 
     def atom(self):
 
-        localctx = J2JParser.AtomContext(self, self._ctx, self.state)
+        localctx = JertlParser.AtomContext(self, self._ctx, self.state)
         self.enterRule(localctx, 24, self.RULE_atom)
         self._la = 0 # Token type
         try:
@@ -926,10 +926,10 @@ class J2JParser ( Parser ):
             self.parser = parser
 
         def IDENTIFIER(self):
-            return self.getToken(J2JParser.IDENTIFIER, 0)
+            return self.getToken(JertlParser.IDENTIFIER, 0)
 
         def getRuleIndex(self):
-            return J2JParser.RULE_variable
+            return JertlParser.RULE_variable
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterVariable" ):
@@ -944,12 +944,12 @@ class J2JParser ( Parser ):
 
     def variable(self):
 
-        localctx = J2JParser.VariableContext(self, self._ctx, self.state)
+        localctx = JertlParser.VariableContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_variable)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 115
-            self.match(J2JParser.IDENTIFIER)
+            self.match(JertlParser.IDENTIFIER)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

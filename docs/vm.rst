@@ -1,5 +1,5 @@
-The j2j Virtual Machine
-=======================
+The jertl Virtual Machine
+=========================
 
 Architecture
 ------------

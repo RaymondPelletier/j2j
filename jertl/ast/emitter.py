@@ -2,11 +2,11 @@ import functools
 
 from ..engine.opcodes import OpCode
 from .                import representation as jar
-from ..exceptions     import J2JCodeEmitterException
+from ..exceptions     import JertlCodeEmitterException
 
 @functools.singledispatch
 def emit(structure, _):
-    raise J2JCodeEmitterException(f'emit cannot handle {structure}')
+    raise JertlCodeEmitterException(f'emit cannot handle {structure}')
 
 @emit.register(int)
 @emit.register(float)
@@ -69,7 +69,7 @@ def optimize_splats(instructions):
     splat = None
 
     #
-    # This is ugly and will remain so intentionlly as incentive to use j2j for peephole optimization
+    # This is ugly and will remain so intentionlly as incentive to use jertl for peephole optimization
     # (AKA the "Eat my own dogfood initiative")
     #
     for instruction in instructions:

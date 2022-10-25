@@ -4,29 +4,29 @@ Toplevel functions
 
 Matching
 ^^^^^^^^
-.. autofunction:: j2j.match
-.. autofunction:: j2j.match_all
-.. autofunction:: j2j.compile_match
+.. autofunction:: jertl.match
+.. autofunction:: jertl.match_all
+.. autofunction:: jertl.compile_match
 
 Filling
 ^^^^^^^
-.. autofunction:: j2j.fill
-.. autofunction:: j2j.compile_fill
+.. autofunction:: jertl.fill
+.. autofunction:: jertl.compile_fill
 
 Transforming
 ^^^^^^^^^^^^
-.. autofunction:: j2j.transform
-.. autofunction:: j2j.transform_all
-.. autofunction:: j2j.compile_transform
+.. autofunction:: jertl.transform
+.. autofunction:: jertl.transform_all
+.. autofunction:: jertl.compile_transform
 
 Collating
 ^^^^^^^^^
-.. autofunction:: j2j.collate
-.. autofunction:: j2j.collate_all
-.. autofunction:: j2j.compile_collate
+.. autofunction:: jertl.collate
+.. autofunction:: jertl.collate_all
+.. autofunction:: jertl.compile_collate
 
 Inferring
 ^^^^^^^^^
-.. autofunction:: j2j.infer
-.. autofunction:: j2j.infer_all
-.. autofunction:: j2j.compile_rule
+.. autofunction:: jertl.infer
+.. autofunction:: jertl.infer_all
+.. autofunction:: jertl.compile_rule

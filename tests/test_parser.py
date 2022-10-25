@@ -1,6 +1,6 @@
 import pytest
-from j2j.ast.builder import parse_string
-from j2j.exceptions  import J2JSyntaxError
+from jertl.ast.builder import parse_string
+from jertl.exceptions  import JertlSyntaxError
 
 positive_tests = [['structure', '{"an": "object"}'],
                   ['structure', '["a", 4, "element", array]'],
@@ -38,7 +38,7 @@ def test_parse(rule, source):
     parse_string(source, rule)
 
 def test_failure():
-    with pytest.raises(J2JSyntaxError):
+    with pytest.raises(JertlSyntaxError):
         parse_string('[$internal_variable_name]', 'structure')
 
 def test_null_collation():

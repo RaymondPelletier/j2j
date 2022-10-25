@@ -1,4 +1,4 @@
-# j2j
+# jertl
 
 A minimally viable Python package for processing structured data
 
@@ -12,9 +12,9 @@ A minimally viable Python package for processing structured data
 ## Installation
 
 ```console
-pip install j2j
+pip install jertl
 ```
 
 ## License
 
-`j2j` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
+`jertl` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.

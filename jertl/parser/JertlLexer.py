@@ -1,4 +1,4 @@
-# Generated from J2J.g4 by ANTLR 4.11.1
+# Generated from Jertl.g4 by ANTLR 4.11.1
 from antlr4 import *
 from io import StringIO
 import sys
@@ -82,7 +82,7 @@ def serializedATN():
         144,151,153,156,163,166,170,177,187,1,6,0,0
     ]
 
-class J2JLexer(Lexer):
+class JertlLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -127,7 +127,7 @@ class J2JLexer(Lexer):
                   "VALID_ID_CHAR", "ESC", "UNICODE", "HEX", "SAFECODEPOINT", 
                   "INTEGER", "FLOAT", "INT", "EXP", "WS", "LINE_COMMENT" ]
 
-    grammarFileName = "J2J.g4"
+    grammarFileName = "Jertl.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)

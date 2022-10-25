@@ -2,7 +2,5 @@
 Processors
 ==========
 
-.. automodule:: j2j.processors
+.. automodule:: jertl.processors
    :members:
-
-

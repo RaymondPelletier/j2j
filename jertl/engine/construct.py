@@ -1,11 +1,11 @@
 import functools
 
 from ..ast        import representation as jar
-from ..exceptions import J2JFillException, J2JPurityException
+from ..exceptions import JertlFillException, JertlPurityException
 
 @functools.singledispatch
 def construct(template, _):
-    raise J2JFillException(f'build could not handle {template}')
+    raise JertlFillException(f'build could not handle {template}')
 
 @construct.register(bool)
 @construct.register(int)
@@ -21,7 +21,7 @@ def _(template, bindings):
     if identifier in bindings:
         return bindings[identifier]
     else:
-        raise J2JFillException(f'{identifier} not bound')
+        raise JertlFillException(f'{identifier} not bound')
 
 @construct.register(dict)
 def _(template, bindings):
@@ -54,9 +54,9 @@ def ensure_purity(value):
         value: the data structure to inspect
 
     Raises:
-        J2JPurityException: A masked list/dict was found
+        JertlPurityException: A masked list/dict was found
     """
-    raise J2JPurityException(f'purity_check failed {value}')
+    raise JertlPurityException(f'purity_check failed {value}')
 
 @ensure_purity.register(bool)
 @ensure_purity.register(int)

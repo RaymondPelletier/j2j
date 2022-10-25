@@ -1,7 +1,7 @@
-from j2j.engine.construct import construct
+from jertl.engine.construct import construct
 
 class Bindings:
-    """Base class for j2j processing results"""
+    """Base class for jertl processing results"""
     def __init__(self, bindings):
         """__init__
 

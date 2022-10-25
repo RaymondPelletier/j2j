@@ -1,4 +1,4 @@
-grammar J2J;
+grammar Jertl;
 
 options {
    language = Python3;

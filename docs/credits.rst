@@ -14,8 +14,7 @@ Antlr
 JSON Grammar
 ------------
 
-Used as base of j2j mini-language
+Used as base of jertl mini-language
 
-| File: `json.g4 <https://github.com/antlr/grammars-v4/blob/master/json/JSON.g4>`_ 
+| File: `json.g4 <https://github.com/antlr/grammars-v4/blob/master/json/JSON.g4>`_
 | Repository: `antlr <https://github.com/antlr>`_ / `grammars-g4 <https://github.com/antlr/grammars-v4>`_
-

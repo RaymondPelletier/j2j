@@ -28,7 +28,7 @@ In a filling context the result of the evaluation expression is the value insert
 
 .. code-block:: python
 
-    >> j2j.transform('{"numerator": x, "denominator": y} --> {"quotient": <<x/y>>}', x=1.0, y=2.0).result
+    >> jertl.transform('{"numerator": x, "denominator": y} --> {"quotient": <<x/y>>}', x=1.0, y=2.0).result
     {'quotient': 0.5}
 
 
@@ -63,7 +63,7 @@ The functions `map`, `filter`, and `reduce`, will be in the set of predefined fu
 Iteration
 ---------
 
-    The j2j mini-language is 'functional-first' so iteration will not be available.
+    The jertl mini-language is 'functional-first' so iteration will not be available.
 
 Disjunction
 -----------
@@ -75,7 +75,7 @@ Ecosystem Improvements
 
     * Semantic analysis to identify potential issues beforehand.
     * Informative Exceptions (location in pattern where exception happened).
-    * Editor support for .j2j source files.
+    * Editor support for .jertl source files.
     * Structure matching optimization.
     * "Eat our own dogfood" in AST generator and OpCode emitter.
     * Match debugger
@@ -88,7 +88,7 @@ Compilation
 
 .. code-block::
 
-    >>> cat find_highest_paid_male_employee.j2j
+    >>> cat find_highest_paid_male_employee.jertl
 
     module highest_paid_male
     //
@@ -105,7 +105,7 @@ Compilation
         highest_salary :=  <<max(map(age, filter(is_male, employees)))>>
         employees       ~  [*_, employee<<{"salary": highest_salary}>>, *_]
 
-    >>> j2j find_highest_paid_male_employee.j2j -o generated_sources
+    >>> jertl find_highest_paid_male_employee.jertl -o generated_sources
 
 Rule Sets and Chaining (Forward Inference)
 ------------------------------------------
