@@ -5,4 +5,4 @@ Mini-language Grammar
 Derived from `json.g4 <https://github.com/antlr/grammars-v4/blob/master/json/JSON.g4>`_
 in the repository `antlr <https://github.com/antlr>`_ / `grammars-g4 <https://github.com/antlr/grammars-v4>`_
 
-.. literalinclude:: ../j2j/parser/j2j.g4
+.. literalinclude:: ../j2j/parser/J2J.g4
