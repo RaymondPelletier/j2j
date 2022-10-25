@@ -24,6 +24,9 @@ tests = [['structure', '{"an": "object"}',
          ['array',     '[1, "have a", *splat,                     "or", *two]',
                         [1, 'have a', VarArgs(Variable('splat')), 'or', VarArgs(Variable('two'))]],
 
+         ['atom',      'null',
+                        None],
+
          ['atom',      'true',
                         True],
 
@@ -99,7 +102,8 @@ tests = [['structure', '{"an": "object"}',
                                                               VarArgs(variable=Variable('spread'))],
                                                      KWArgs(): Variable('kw')})])],
 
-         ['atom', 'null', None]]
+         ['rule_',     '-->',  Rule(matchers=[], setters=[])],
+         ['collation', '',     []]]
 
 @pytest.mark.parametrize('rule,source,result', tests)
 def test_ast_for_string(rule, source, result):

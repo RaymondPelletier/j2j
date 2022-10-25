@@ -10,42 +10,42 @@ else:
 
 def serializedATN():
     return [
-        4,1,20,115,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,20,118,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
-        1,0,1,0,1,0,1,0,1,1,4,1,34,8,1,11,1,12,1,35,1,2,4,2,39,8,2,11,2,
-        12,2,40,1,2,1,2,4,2,45,8,2,11,2,12,2,46,1,3,1,3,1,3,1,3,1,4,1,4,
-        1,4,1,4,1,5,1,5,1,5,1,5,3,5,61,8,5,1,6,1,6,1,6,1,6,5,6,67,8,6,10,
-        6,12,6,70,9,6,1,6,1,6,3,6,74,8,6,1,6,1,6,1,6,1,6,3,6,80,8,6,1,7,
-        1,7,1,7,1,7,1,8,1,8,1,8,1,9,1,9,1,9,1,9,5,9,93,8,9,10,9,12,9,96,
-        9,9,1,9,1,9,1,9,1,9,3,9,102,8,9,1,10,1,10,3,10,106,8,10,1,11,1,11,
-        1,11,1,12,1,12,1,13,1,13,1,13,0,0,14,0,2,4,6,8,10,12,14,16,18,20,
-        22,24,26,0,1,2,0,10,13,17,18,112,0,28,1,0,0,0,2,33,1,0,0,0,4,38,
-        1,0,0,0,6,48,1,0,0,0,8,52,1,0,0,0,10,60,1,0,0,0,12,79,1,0,0,0,14,
-        81,1,0,0,0,16,85,1,0,0,0,18,101,1,0,0,0,20,105,1,0,0,0,22,107,1,
-        0,0,0,24,110,1,0,0,0,26,112,1,0,0,0,28,29,3,10,5,0,29,30,5,9,0,0,
-        30,31,3,10,5,0,31,1,1,0,0,0,32,34,3,6,3,0,33,32,1,0,0,0,34,35,1,
-        0,0,0,35,33,1,0,0,0,35,36,1,0,0,0,36,3,1,0,0,0,37,39,3,6,3,0,38,
-        37,1,0,0,0,39,40,1,0,0,0,40,38,1,0,0,0,40,41,1,0,0,0,41,42,1,0,0,
-        0,42,44,5,9,0,0,43,45,3,8,4,0,44,43,1,0,0,0,45,46,1,0,0,0,46,44,
-        1,0,0,0,46,47,1,0,0,0,47,5,1,0,0,0,48,49,3,26,13,0,49,50,5,14,0,
-        0,50,51,3,10,5,0,51,7,1,0,0,0,52,53,3,26,13,0,53,54,5,15,0,0,54,
-        55,3,10,5,0,55,9,1,0,0,0,56,61,3,12,6,0,57,61,3,18,9,0,58,61,3,24,
-        12,0,59,61,3,26,13,0,60,56,1,0,0,0,60,57,1,0,0,0,60,58,1,0,0,0,60,
-        59,1,0,0,0,61,11,1,0,0,0,62,63,5,1,0,0,63,68,3,14,7,0,64,65,5,2,
-        0,0,65,67,3,14,7,0,66,64,1,0,0,0,67,70,1,0,0,0,68,66,1,0,0,0,68,
-        69,1,0,0,0,69,73,1,0,0,0,70,68,1,0,0,0,71,72,5,2,0,0,72,74,3,16,
-        8,0,73,71,1,0,0,0,73,74,1,0,0,0,74,75,1,0,0,0,75,76,5,3,0,0,76,80,
-        1,0,0,0,77,78,5,1,0,0,78,80,5,3,0,0,79,62,1,0,0,0,79,77,1,0,0,0,
-        80,13,1,0,0,0,81,82,5,13,0,0,82,83,5,4,0,0,83,84,3,10,5,0,84,15,
-        1,0,0,0,85,86,5,5,0,0,86,87,3,26,13,0,87,17,1,0,0,0,88,89,5,6,0,
-        0,89,94,3,20,10,0,90,91,5,2,0,0,91,93,3,20,10,0,92,90,1,0,0,0,93,
-        96,1,0,0,0,94,92,1,0,0,0,94,95,1,0,0,0,95,97,1,0,0,0,96,94,1,0,0,
-        0,97,98,5,7,0,0,98,102,1,0,0,0,99,100,5,6,0,0,100,102,5,7,0,0,101,
-        88,1,0,0,0,101,99,1,0,0,0,102,19,1,0,0,0,103,106,3,10,5,0,104,106,
-        3,22,11,0,105,103,1,0,0,0,105,104,1,0,0,0,106,21,1,0,0,0,107,108,
-        5,8,0,0,108,109,3,26,13,0,109,23,1,0,0,0,110,111,7,0,0,0,111,25,
-        1,0,0,0,112,113,5,16,0,0,113,27,1,0,0,0,10,35,40,46,60,68,73,79,
-        94,101,105
+        1,0,1,0,1,0,1,0,1,1,5,1,34,8,1,10,1,12,1,37,9,1,1,2,5,2,40,8,2,10,
+        2,12,2,43,9,2,1,2,1,2,5,2,47,8,2,10,2,12,2,50,9,2,1,3,1,3,1,3,1,
+        3,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,3,5,64,8,5,1,6,1,6,1,6,1,6,5,6,
+        70,8,6,10,6,12,6,73,9,6,1,6,1,6,3,6,77,8,6,1,6,1,6,1,6,1,6,3,6,83,
+        8,6,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,9,1,9,1,9,1,9,5,9,96,8,9,10,9,
+        12,9,99,9,9,1,9,1,9,1,9,1,9,3,9,105,8,9,1,10,1,10,3,10,109,8,10,
+        1,11,1,11,1,11,1,12,1,12,1,13,1,13,1,13,0,0,14,0,2,4,6,8,10,12,14,
+        16,18,20,22,24,26,0,1,2,0,10,13,17,18,115,0,28,1,0,0,0,2,35,1,0,
+        0,0,4,41,1,0,0,0,6,51,1,0,0,0,8,55,1,0,0,0,10,63,1,0,0,0,12,82,1,
+        0,0,0,14,84,1,0,0,0,16,88,1,0,0,0,18,104,1,0,0,0,20,108,1,0,0,0,
+        22,110,1,0,0,0,24,113,1,0,0,0,26,115,1,0,0,0,28,29,3,10,5,0,29,30,
+        5,9,0,0,30,31,3,10,5,0,31,1,1,0,0,0,32,34,3,6,3,0,33,32,1,0,0,0,
+        34,37,1,0,0,0,35,33,1,0,0,0,35,36,1,0,0,0,36,3,1,0,0,0,37,35,1,0,
+        0,0,38,40,3,6,3,0,39,38,1,0,0,0,40,43,1,0,0,0,41,39,1,0,0,0,41,42,
+        1,0,0,0,42,44,1,0,0,0,43,41,1,0,0,0,44,48,5,9,0,0,45,47,3,8,4,0,
+        46,45,1,0,0,0,47,50,1,0,0,0,48,46,1,0,0,0,48,49,1,0,0,0,49,5,1,0,
+        0,0,50,48,1,0,0,0,51,52,3,26,13,0,52,53,5,14,0,0,53,54,3,10,5,0,
+        54,7,1,0,0,0,55,56,3,26,13,0,56,57,5,15,0,0,57,58,3,10,5,0,58,9,
+        1,0,0,0,59,64,3,12,6,0,60,64,3,18,9,0,61,64,3,24,12,0,62,64,3,26,
+        13,0,63,59,1,0,0,0,63,60,1,0,0,0,63,61,1,0,0,0,63,62,1,0,0,0,64,
+        11,1,0,0,0,65,66,5,1,0,0,66,71,3,14,7,0,67,68,5,2,0,0,68,70,3,14,
+        7,0,69,67,1,0,0,0,70,73,1,0,0,0,71,69,1,0,0,0,71,72,1,0,0,0,72,76,
+        1,0,0,0,73,71,1,0,0,0,74,75,5,2,0,0,75,77,3,16,8,0,76,74,1,0,0,0,
+        76,77,1,0,0,0,77,78,1,0,0,0,78,79,5,3,0,0,79,83,1,0,0,0,80,81,5,
+        1,0,0,81,83,5,3,0,0,82,65,1,0,0,0,82,80,1,0,0,0,83,13,1,0,0,0,84,
+        85,5,13,0,0,85,86,5,4,0,0,86,87,3,10,5,0,87,15,1,0,0,0,88,89,5,5,
+        0,0,89,90,3,26,13,0,90,17,1,0,0,0,91,92,5,6,0,0,92,97,3,20,10,0,
+        93,94,5,2,0,0,94,96,3,20,10,0,95,93,1,0,0,0,96,99,1,0,0,0,97,95,
+        1,0,0,0,97,98,1,0,0,0,98,100,1,0,0,0,99,97,1,0,0,0,100,101,5,7,0,
+        0,101,105,1,0,0,0,102,103,5,6,0,0,103,105,5,7,0,0,104,91,1,0,0,0,
+        104,102,1,0,0,0,105,19,1,0,0,0,106,109,3,10,5,0,107,109,3,22,11,
+        0,108,106,1,0,0,0,108,107,1,0,0,0,109,21,1,0,0,0,110,111,5,8,0,0,
+        111,112,3,26,13,0,112,23,1,0,0,0,113,114,7,0,0,0,114,25,1,0,0,0,
+        115,116,5,16,0,0,116,27,1,0,0,0,10,35,41,48,63,71,76,82,97,104,108
     ]
 
 class J2JParser ( Parser ):
@@ -205,17 +205,15 @@ class J2JParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 33 
+            self.state = 35
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while True:
+            while _la==16:
                 self.state = 32
                 self.matcher()
-                self.state = 35 
+                self.state = 37
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==16):
-                    break
 
         except RecognitionException as re:
             localctx.exception = re
@@ -271,31 +269,27 @@ class J2JParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 38 
+            self.state = 41
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while True:
-                self.state = 37
+            while _la==16:
+                self.state = 38
                 self.matcher()
-                self.state = 40 
+                self.state = 43
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==16):
-                    break
 
-            self.state = 42
+            self.state = 44
             self.match(J2JParser.IMPLIES)
-            self.state = 44 
+            self.state = 48
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while True:
-                self.state = 43
+            while _la==16:
+                self.state = 45
                 self.setter()
-                self.state = 46 
+                self.state = 50
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==16):
-                    break
 
         except RecognitionException as re:
             localctx.exception = re
@@ -344,11 +338,11 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_matcher)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 48
+            self.state = 51
             self.variable()
-            self.state = 49
+            self.state = 52
             self.match(J2JParser.MATCHES)
-            self.state = 50
+            self.state = 53
             self.structure()
         except RecognitionException as re:
             localctx.exception = re
@@ -397,11 +391,11 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_setter)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 52
+            self.state = 55
             self.variable()
-            self.state = 53
+            self.state = 56
             self.match(J2JParser.ASSIGNED)
-            self.state = 54
+            self.state = 57
             self.structure()
         except RecognitionException as re:
             localctx.exception = re
@@ -454,27 +448,27 @@ class J2JParser ( Parser ):
         localctx = J2JParser.StructureContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_structure)
         try:
-            self.state = 60
+            self.state = 63
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 56
+                self.state = 59
                 self.obj()
                 pass
             elif token in [6]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 57
+                self.state = 60
                 self.array()
                 pass
             elif token in [10, 11, 12, 13, 17, 18]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 58
+                self.state = 61
                 self.atom()
                 pass
             elif token in [16]:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 59
+                self.state = 62
                 self.variable()
                 pass
             else:
@@ -529,49 +523,49 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 12, self.RULE_obj)
         self._la = 0 # Token type
         try:
-            self.state = 79
+            self.state = 82
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 62
+                self.state = 65
                 self.match(J2JParser.T__0)
-                self.state = 63
+                self.state = 66
                 localctx._key_value = self.key_value()
                 localctx.key_values.append(localctx._key_value)
-                self.state = 68
+                self.state = 71
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
                 while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                     if _alt==1:
-                        self.state = 64
+                        self.state = 67
                         self.match(J2JParser.T__1)
-                        self.state = 65
+                        self.state = 68
                         localctx._key_value = self.key_value()
                         localctx.key_values.append(localctx._key_value) 
-                    self.state = 70
+                    self.state = 73
                     self._errHandler.sync(self)
                     _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
 
-                self.state = 73
+                self.state = 76
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==2:
-                    self.state = 71
+                    self.state = 74
                     self.match(J2JParser.T__1)
-                    self.state = 72
+                    self.state = 75
                     self.kwargs()
 
 
-                self.state = 75
+                self.state = 78
                 self.match(J2JParser.T__2)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 77
+                self.state = 80
                 self.match(J2JParser.T__0)
-                self.state = 78
+                self.state = 81
                 self.match(J2JParser.T__2)
                 pass
 
@@ -619,11 +613,11 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_key_value)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 81
+            self.state = 84
             self.match(J2JParser.STRING)
-            self.state = 82
+            self.state = 85
             self.match(J2JParser.T__3)
-            self.state = 83
+            self.state = 86
             self.structure()
         except RecognitionException as re:
             localctx.exception = re
@@ -665,9 +659,9 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_kwargs)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 85
+            self.state = 88
             self.match(J2JParser.T__4)
-            self.state = 86
+            self.state = 89
             self.variable()
         except RecognitionException as re:
             localctx.exception = re
@@ -714,38 +708,38 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_array)
         self._la = 0 # Token type
         try:
-            self.state = 101
+            self.state = 104
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 88
+                self.state = 91
                 self.match(J2JParser.T__5)
-                self.state = 89
+                self.state = 92
                 localctx._element = self.element()
                 localctx.elements.append(localctx._element)
-                self.state = 94
+                self.state = 97
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while _la==2:
-                    self.state = 90
+                    self.state = 93
                     self.match(J2JParser.T__1)
-                    self.state = 91
+                    self.state = 94
                     localctx._element = self.element()
                     localctx.elements.append(localctx._element)
-                    self.state = 96
+                    self.state = 99
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
 
-                self.state = 97
+                self.state = 100
                 self.match(J2JParser.T__6)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 99
+                self.state = 102
                 self.match(J2JParser.T__5)
-                self.state = 100
+                self.state = 103
                 self.match(J2JParser.T__6)
                 pass
 
@@ -793,17 +787,17 @@ class J2JParser ( Parser ):
         localctx = J2JParser.ElementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_element)
         try:
-            self.state = 105
+            self.state = 108
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1, 6, 10, 11, 12, 13, 16, 17, 18]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 103
+                self.state = 106
                 self.structure()
                 pass
             elif token in [8]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 104
+                self.state = 107
                 self.varargs()
                 pass
             else:
@@ -849,9 +843,9 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 22, self.RULE_varargs)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 107
+            self.state = 110
             self.match(J2JParser.T__7)
-            self.state = 108
+            self.state = 111
             self.variable()
         except RecognitionException as re:
             localctx.exception = re
@@ -908,7 +902,7 @@ class J2JParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 110
+            self.state = 113
             _la = self._input.LA(1)
             if not(((_la) & ~0x3f) == 0 and ((1 << _la) & 408576) != 0):
                 self._errHandler.recoverInline(self)
@@ -954,7 +948,7 @@ class J2JParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_variable)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 112
+            self.state = 115
             self.match(J2JParser.IDENTIFIER)
         except RecognitionException as re:
             localctx.exception = re

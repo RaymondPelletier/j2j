@@ -9,11 +9,11 @@ transform
    ;
 
 collation
-   : matcher+
+   : matcher*
    ;
 
 rule_
-   : matcher+ IMPLIES setter+
+   : matcher* IMPLIES setter*
    ;
 
 matcher
