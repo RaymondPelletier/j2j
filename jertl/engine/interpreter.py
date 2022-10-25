@@ -3,9 +3,9 @@ from   functools   import singledispatch
 from   typing      import Dict, Any
 from   copy        import copy
 
-from   j2j.engine.opcodes   import OpCode
-from   j2j.engine.masks     import MaskedList, MaskedDict, freeze
-from   j2j.exceptions       import J2JInterpreterException
+from   jertl.engine.opcodes   import OpCode
+from   jertl.engine.masks     import MaskedList, MaskedDict, freeze
+from   jertl.exceptions       import JertlInterpreterException
 
 @dataclass
 class Context:
@@ -162,4 +162,4 @@ class Interpreter:
                 self.backtrack()
 
             else:
-                raise J2JInterpreterException(f'OpCode {opcode} not understood')
+                raise JertlInterpreterException(f'OpCode {opcode} not understood')

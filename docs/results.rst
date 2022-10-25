@@ -3,5 +3,5 @@
 Result Objects
 ==============
 
-.. automodule:: j2j.results
+.. automodule:: jertl.results
    :members:

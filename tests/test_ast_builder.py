@@ -1,7 +1,7 @@
 import pytest
-from j2j.ast.builder        import ast_for_string
-from j2j.ast.representation import Variable, VarArgs, KWArgs
-from j2j.ast.representation import Matcher,  Setter,  Transform, Rule
+from jertl.ast.builder        import ast_for_string
+from jertl.ast.representation import Variable, VarArgs, KWArgs
+from jertl.ast.representation import Matcher,  Setter,  Transform, Rule
 
 tests = [['structure', '{"an": "object"}',
                         {'an': 'object'}],

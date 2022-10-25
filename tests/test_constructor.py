@@ -1,7 +1,7 @@
 import pytest
 
-from j2j.ast.builder        import ast_for_string
-from j2j.engine.construct   import construct, ensure_purity
+from jertl.ast.builder        import ast_for_string
+from jertl.engine.construct   import construct, ensure_purity
 
 
 tests = [['x',

@@ -1,15 +1,15 @@
-import j2j
-from   j2j.engine.construct import ensure_purity
+import jertl
+from   jertl.engine.construct import ensure_purity
 
 def test_match_all():
-    matches = list(j2j.match_all('[*x, [y, [*z, *z], y], *x]', [1, [2, [3, 3], 2] ,1]))
+    matches = list(jertl.match_all('[*x, [y, [*z, *z], y], *x]', [1, [2, [3, 3], 2] ,1]))
     assert len(matches) == 1
     assert matches[0].bindings['x'] == [1]
     assert matches[0].bindings['y'] ==  2
     assert matches[0].bindings['z'] == [3]
 
 def test_compiled_match():
-    matcher = j2j.compile_match('[*before, x, *after]')
+    matcher = jertl.compile_match('[*before, x, *after]')
     for i, match in enumerate(matcher.match_all(list(range(3)))):
         assert match.bindings['before'] == list(range(i))
         assert match.bindings['x']      == i
@@ -18,16 +18,16 @@ def test_compiled_match():
         ensure_purity(match.matched)
 
 def test_fill():
-    assert j2j.fill('[a, b, c]', a=True, b=None, c='a string') == [True, None, 'a string']
+    assert jertl.fill('[a, b, c]', a=True, b=None, c='a string') == [True, None, 'a string']
 
 def test_compiled_fill():
-    filler = j2j.compile_fill('[a, b]')
+    filler = jertl.compile_fill('[a, b]')
 
     for pair in [[1,2], [7,9]]:
       assert filler.fill(a=pair[0], b=pair[1]) == pair
 
 def test_collate_all():
-    collations = list(j2j.collate_all('''
+    collations = list(jertl.collate_all('''
                                       employee   ~ {"Name": "Ray", "Supervisor": supervisor_id}
                                       supervisor ~ {"EmployeeId": supervisor_id}
                                       ''',
@@ -37,7 +37,7 @@ def test_collate_all():
     assert collations[0].bindings == {'employee': {'Name': 'Ray', 'Supervisor': 666}, 'supervisor': {'EmployeeId': 666}, 'supervisor_id': 666}
 
 def test_compiled_collate():
-    collator = j2j.compile_collate('''
+    collator = jertl.compile_collate('''
                                    a ~ [*_, n, *_]
                                    b ~ [*_, n, *_]
                                    ''')
@@ -47,14 +47,14 @@ def test_compiled_collate():
     assert collations[1].bindings['n'] == 4
 
 def test_transform_all():
-    transforms = list(j2j.transform_all('[*a, x, b, y, *c] --> [y, x]', [1,2,3,4,5]))
+    transforms = list(jertl.transform_all('[*a, x, b, y, *c] --> [y, x]', [1,2,3,4,5]))
     assert len(transforms) == 3
     assert transforms[0].filled == [3, 1]
     assert transforms[1].filled == [4, 2]
     assert transforms[2].filled == [5, 3]
 
 def test_compiled_inference():
-    rule = j2j.compile_rule('''
+    rule = jertl.compile_rule('''
 							a ~ [*_1, n, x, *_2]
 							b ~ [*_3, n, y, *_4]
 						-->

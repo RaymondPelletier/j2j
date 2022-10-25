@@ -1,4 +1,4 @@
-from j2j.ast.representation import Variable
+from jertl.ast.representation import Variable
 
 # Variables
 

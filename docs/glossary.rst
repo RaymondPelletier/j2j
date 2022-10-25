@@ -2,7 +2,7 @@ Glossary
 ========
 
 pattern
-    A string describing elements of the j2j mini-language for processing data structures
+    A string describing elements of the jertl mini-language for processing data structures
     Elements include structures, transforms, collations, and rules
 
 structures

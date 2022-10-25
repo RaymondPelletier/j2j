@@ -1,11 +1,11 @@
-.. j2j documentation master file, created by
+.. jertl documentation master file, created by
    sphinx-quickstart on Mon Oct 17 12:15:46 2022.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-######################################################################
-j2j - A minimally viable Python package for processing structured data
-######################################################################
+########################################################################
+jertl - A minimally viable Python package for processing structured data
+########################################################################
 
 Where developers declaratively define and execute common operations on complex data structures.
 
@@ -20,7 +20,7 @@ Matching
 
 >>> movie = {"title": "Pinocchio", "MPAA rating": "PG"}
 >>>
->>> match = j2j.match('{"title": title, "MPAA rating": "PG"}', movie)
+>>> match = jertl.match('{"title": title, "MPAA rating": "PG"}', movie)
 >>>
 >>> if match is not None:
 ...     print(match.bindings['title'])
@@ -30,7 +30,7 @@ Pinocchio
 Filling
 =======
 
->>> j2j.fill('{"name": name, "age": age, "status": status}',
+>>> jertl.fill('{"name": name, "age": age, "status": status}',
 ...            name="Ray",
 ...            age=66,
 ...            status='employed')
@@ -43,7 +43,7 @@ Transforming
 >>>
 >>> retire = '{"status": "employed", **the_rest} --> {"status": "retired", **the_rest}'
 >>>
->>> transformation = j2j.transform(retire, ray)
+>>> transformation = jertl.transform(retire, ray)
 >>> transformation.filled
 {'status': 'retired', 'name': 'Ray', 'age': 66}
 
@@ -58,7 +58,7 @@ Collating
 ...     employee   ~ {"name": name}
 ...     '''
 >>>
->>> collation = j2j.collate(supervises, supervisor=jeff, employee=jeremy)
+>>> collation = jertl.collate(supervises, supervisor=jeff, employee=jeremy)
 >>> collation is not None
 True
 
@@ -94,7 +94,7 @@ Inferring
 ...                  'summary':     'NO ONE 17 AND UNDER ADMITTED',
 ...                  'explanation': 'Clearly for adults only.'}]
 ...
->>> for inference in j2j.infer_all(rule, movies=movies, MPAA_ratings=MPAA_ratings):
+>>> for inference in jertl.infer_all(rule, movies=movies, MPAA_ratings=MPAA_ratings):
 ... 	print(inference.fills['movie'])
 ...
 {'title': 'Toy Story', 'contents': 'Nothing to offend parents for viewing by children.'}
@@ -105,7 +105,7 @@ Installation
 
 .. code-block:: bash
 
-   pip install j2j
+   pip install jertl
 
 The Mini-language
 *****************

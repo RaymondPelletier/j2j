@@ -1,10 +1,10 @@
-import j2j.ast.emitter as jae
-import j2j.ast.builder as jab
+import jertl.ast.emitter as jae
+import jertl.ast.builder as jab
 
-from j2j.engine.interpreter import Interpreter
-from j2j.engine.construct   import construct
+from jertl.engine.interpreter import Interpreter
+from jertl.engine.construct   import construct
 
-from j2j.results import Match, Transformation, Collation, Inference
+from jertl.results import Match, Transformation, Collation, Inference
 
 class Matcher:
     """Class which compares data to a structure and returns all Matches"""
