@@ -40,3 +40,9 @@ def test_parse(rule, source):
 def test_failure():
     with pytest.raises(J2JSyntaxError):
         parse_string('[$internal_variable_name]', 'structure')
+
+def test_null_collation():
+    parse_string('', 'collation')
+
+def test_null_rule():
+    parse_string('-->', 'rule_')
