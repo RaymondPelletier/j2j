@@ -4,16 +4,23 @@ build-backend = "hatchling.build"
 
 [project]
 name = "j2j"
-description = 'Data processing using JSON adjacent templates'
+description = 'A minimally viable Python package for processing structured data'
 readme = "README.md"
 requires-python = ">=3.6"
 license = "Apache-2.0"
-keywords = ["JSON"]
+keywords = ["JSON", "development", "structured data", "pattern matching"]
 authors = [
-  { name = "RaymondPelletier", email = "68929475+RaymondPelletier@users.noreply.github.com" },
+  { name = "Ray Pelletier", email = "68929475+RaymondPelletier@users.noreply.github.com" },
 ]
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Interpreters",
+  "Topic :: Other/Nonlisted Topic",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Programming Language :: Other",
+  # Pick your license as you wish
+  "License :: OSI Approved :: Apache Software License",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.6",
   "Programming Language :: Python :: 3.7",
@@ -24,25 +31,23 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["antlr4-python3-runtime"]
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://github.com/unknown/j2j#readme"
-Issues = "https://github.com/unknown/j2j/issues"
-Source = "https://github.com/unknown/j2j"
+Documentation = "https://j2j.readthedocs.io/en/latest/"
+Issues = "https://github.com/RaymondPelletier/j2j/issues"
+Source = "https://github.com/RaymondPelletier/j2j"
 
 [tool.hatch.version]
 path = "j2j/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
-  "pytest",
-  "pytest-cov",
+  "pytest"
 ]
 [tool.hatch.envs.default.scripts]
-cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=j2j --cov=tests {args}"
-no-cov = "cov --no-cov {args}"
+cov = "pytest {args}"
 
 [[tool.hatch.envs.test.matrix]]
 python = ["36", "37", "38", "39", "310", "311"]
