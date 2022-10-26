@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-########################################################################
-jertl - A minimally viable package for processing structured data
-########################################################################
+###############################################################
+jertl - A minimum viable package for processing structured data
+###############################################################
 
 Where developers declaratively define and execute common operations on complex data structures.
 
