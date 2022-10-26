@@ -1,16 +1,13 @@
 The Mini-language
 *****************
 
-Syntax and Semantics
-====================
-
 The mini-language used by jertl contains elements which could be called "JSON adjacent".
 The syntax for data structures will be recognizable by developers who have worked with JSON.
 This is more so for Python developers given there are elements of the syntax which are identical
 to that of the structural matching used in Python's `match` statement.
 
 Literals
-^^^^^^^^
+========
 
 The syntax for literals follows that of JSON.
 
@@ -47,7 +44,7 @@ jertlParseError: line 1: 0 token recognition error at: '''
 
 
 Variables
-^^^^^^^^^
+=========
 
 In a matching context unbound variables match :ref:`the current focus<Focus Stack>`.
 
@@ -81,10 +78,10 @@ When used multiple times in a pattern they do not have to refer to the same valu
 {}
 
 Structures
-^^^^^^^^^^
+==========
 
 Arrays
-......
+^^^^^^
 
 Arrays are represented by a comma seperated list of expressions surrounded by brackets.
 Each expression must match item in the corresponding position of the data being matched.
@@ -130,7 +127,7 @@ Anonymous variables may also be splatted.
 {'x': 4}
 
 Objects
-.......
+^^^^^^^
 
 The syntax of objects is a superset of that of JSON.
 Key/value pairs are seperated by colons.
@@ -159,10 +156,10 @@ Once a double splatted is bound it must match the current focus
 Anonymous variables may be double splatted but this will not do anything useful.
 
 Operations
-^^^^^^^^^^
+==========
 
 Simple transforms
-.................
+^^^^^^^^^^^^^^^^^
 
 The pattern for simple transforms is two structure patterns one each side of the IMPLICATION token
 
@@ -178,7 +175,7 @@ For example
 
 
 Targeted matches
-................
+^^^^^^^^^^^^^^^^
 
 Conjoins and rules, which can match to multiple data structures,
 explicitly identify which structure to examine.
@@ -196,7 +193,7 @@ For example
 The variable, in this case ``employee``, *must* be bound.
 
 Targeted fills
-..............
+^^^^^^^^^^^^^^
 
 Similarly, rules can perform multiple fill operations.
 The targeted fill pattern specifies a variable to be bound to a filled structure.
@@ -214,7 +211,7 @@ For example
 The variable, in this case ``retiree``, *must not* be bound.
 
 Collations
-..........
+^^^^^^^^^^
 
 The syntax for collations are a sequence of targeted matches seperated by whitespace
 
@@ -224,7 +221,7 @@ The syntax for collations are a sequence of targeted matches seperated by whites
     employee   ~ {"name": name}
 
 Rules
-.....
+^^^^^
 
 rules are a sequence of targeted matches seperated by whitespace followed by IMPLIES,
 then a sequence of targetted fills seperated by whitespace.
@@ -238,6 +235,6 @@ then a sequence of targetted fills seperated by whitespace.
 
 
 Comments
-^^^^^^^^
+========
 
 Everything following a double slash ('//') is ignored.
