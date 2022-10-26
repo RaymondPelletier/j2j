@@ -13,7 +13,8 @@ def match(structure, data):
             structure against
 
     Returns:
-        Optional(Match): A description of match
+        Optional(:obj:`~.Match`): A description of the match
+
     """
     return Matcher(structure).match(data)
 
@@ -24,10 +25,10 @@ def match_all(structure, data):
         structure (str): A pattern defining the structure to compare to
             the target data.
         data ((Sequence | Mapping | Number)): Python data to match
-    :yield: All possible matches
 
-    Returns:
-        generator (of Match)
+    Yields:
+        :obj:`~.Match`: All possible matches
+
     """
     yield from Matcher(structure).match_all(data)
 
@@ -39,8 +40,8 @@ def compile_match(structure):
             the target data.
 
     Returns:
-        Matcher: An object which can be used to match template to
-        objects
+        :obj:`~.Matcher`: An object which can be used to match template to objects
+
     """
     return Matcher(structure)
 
@@ -50,11 +51,12 @@ def fill(structure, **bindings):
     Args:
         structure (str): A pattern defining the structure to compare to
             the target data.
-        **bindings (KWARgs): values for free variables referenced by
+        **bindings (Dict[str, list | dict | str | Number]): values for free variables referenced by
             template
 
     Returns:
         Dict | Sequence | Number: A filled template
+
     """
     return Filler(structure).fill(**bindings)
 
@@ -66,7 +68,7 @@ def compile_fill(structure):
             the target data.
 
     Returns:
-        Filler: A filler
+        :obj:`~.Filler`: A filler
     """
     return Filler(structure)
 
@@ -79,7 +81,7 @@ def transform(transform, data):
         data (Dict | Sequence | Number): Data to match against.
 
     Returns:
-        Optional(Transformation):: A Transformation
+        Optional(:obj:`~.Transformer`):: A Transformation
     """
     return Transformer(transform).transform(data)
 
@@ -90,10 +92,10 @@ def transform_all(transform, data):
         transform (str): A pattern describing structures for matching
             and filling.
         data (KwArgs): Data to match against.
-    :yield: All possible transforms of the sources
 
-    Returns:
-        generator (of Transformation)
+    Yields:
+        :obj:`~.Transformation`:  All possible transforms of the sources
+
     """
     yield from Transformer(transform).transform_all(data)
 
@@ -104,7 +106,7 @@ def compile_transform(transform):
         transform (str): Pattern describing a transform.
 
     Returns:
-        Transformer: A transformer
+        :obj:`~.Transformer`: A transformer
     """
     return Transformer(transform)
 
@@ -114,10 +116,10 @@ def collate(collation, **bindings):
 
     Args:
         collation (str): Specification of collation.
-        sources (KwArgs): Data to match against.
+        **bindings (Dict[str, list | dict | str | Number]): Data to match against.
 
     Returns:
-        Optional(Collation): A Collation
+        Optional(:obj:`Collation`): A Collation
     """
     return Collator(collation).collate(**bindings)
 
@@ -126,11 +128,11 @@ def collate_all(collation, **sources):
 
     Args:
         collation (str): Specification of collation.
-        **sources (KwArgs): Data to match against.
-    :yield:          All possible collations:
+        **sources (Dict[str, list | dict | str | Number]): Data to match against.
 
-    Returns:
-        generator (of Collation):
+    Yields:
+        :obj:`~.Collation`: All possible collations
+
     """
     yield from Collator(collation).collate_all(**sources)
 
@@ -139,10 +141,10 @@ def compile_collate(collation):
 
     Args:
         collation (str): Specification of collation.
-        sources (KwArgs): Data to match against.
+        sources (Dict[str, list | dict | str | Number]): Data to match against.
 
     Returns:
-        Collator: A collator
+        :obj:`~.Collator`: A collator
     """
     return Collator(collation)
 
@@ -151,10 +153,10 @@ def infer(rule, **sources):
 
     Args:
         rule (str): Pattern describing a production rule.
-        **sources (KwArgs): Data to match against.
+        **sources (Dict[str, list | dict | str | Number]): Data to match against.
 
     Returns:
-        Optional(Inference): An inference
+        Optional(:obj:`~.Inference`): An inference
     """
     return Rule(rule).infer(**sources)
 
@@ -163,11 +165,11 @@ def infer_all(rule, **sources):
 
     Args:
         rule (str): Pattern describing a production rule.
-        **sources (KwArgs): Data to match against.
-    :yield: All possible inferences
+        **sources (Dict[str, list | dict | str | Number]): Data to match against.
 
-    Returns:
-        generator of Inferences
+    Yields:
+        :obj:`~.Inference`: All possible inferences
+
     """
     yield from Rule(rule).infer_all(**sources)
 
@@ -178,11 +180,11 @@ def compile_rule(rule):
         rule (str): Pattern describing a production rule.
 
     Returns:
-        Rule: A rule
+        :obj:`~.Rule`: A rule
     """
     return Rule(rule)
 
-__all__ = ['match',     'match_all',     'compile_match', 
+__all__ = ['match',     'match_all',     'compile_match',
            'fill',                       'compile_fill',
            'transform', 'transform_all', 'compile_transform',
            'collate',   'collate_all',   'compile_collate',

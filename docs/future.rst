@@ -1,4 +1,5 @@
-.. title:: Future Directions
+Future Directions
+*****************
 
 New Features
 ============

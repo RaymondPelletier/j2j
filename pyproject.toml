@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "jertl"
-description = 'A minimally viable Python package for processing structured data'
+description = 'A minimally viable package for processing structured data'
 readme = "README.md"
 requires-python = ">=3.6"
 license = "Apache-2.0"

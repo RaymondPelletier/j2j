@@ -3,12 +3,6 @@ from jertl.engine.construct import construct
 class Bindings:
     """Base class for jertl processing results"""
     def __init__(self, bindings):
-        """__init__
-
-        Args:
-            bindings (Dict[str, list | dict | str | Number]): dictionary
-                containing a set of variable bindings
-        """
         self._bindings = bindings
 
     @property
@@ -26,13 +20,6 @@ class Bindings:
 class Match(Bindings):
     """Output of a matcher"""
     def __init__(self, matched, bindings):
-        """__init__ Create result of a Match operation
-
-        Args:
-            matched (str): structure used to match data
-            bindings (Dict[str, list | dict | str | Number]): The
-                variable bindings
-        """
         self._matched = matched
         super().__init__(bindings)
 
@@ -50,14 +37,6 @@ class Match(Bindings):
 class Transformation(Bindings):
     """Class describing a tranform result"""
     def __init__(self, matched, filled, bindings):
-        """__init__ Create result of a transform operation
-
-        Args:
-            matched: structure used to match source data
-            fill:  structure used to generate filled data
-            bindings (Dict[str, list | dict | str | Number]): The
-                variable bindings
-        """
         self._matched = matched
         self._filled  = filled
         super().__init__(bindings)
@@ -86,14 +65,6 @@ class Transformation(Bindings):
 class Collation(Bindings):
     """Output of a collator"""
     def __init__(self, matchers, bindings):
-        """__init__ Create result of a collate operation
-
-        Args:
-            matchers: mapping of variables to structures used for
-                matching
-            bindings (Dict[str, list | dict | str | Number]): The
-                variable bindings
-        """
         self._matchers = matchers
         super().__init__(bindings)
 
@@ -111,14 +82,6 @@ class Collation(Bindings):
 class Inference(Bindings):
     """Result yielded by an Inferencer"""
     def __init__(self, matchers, fillers, bindings):
-        """__init__ Create result of a infer operation
-
-        Args:
-            matchers: structures used to match input data
-            fillers: structures used to generate output data
-            bindings (Dict[str, list | dict | str | Number]): The
-                variable bindings
-        """
         self._matchers = matchers
         self._fillers  = fillers
         super().__init__(bindings)

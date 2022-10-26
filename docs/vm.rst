@@ -17,6 +17,8 @@ widens the splat variable's binding to include the next element of the list, the
 If there are no more elements in the list the snapshot is popped off the context stack and the vm again backtracks.
 The vm halts if the context stack is empty.
 
+.. _Focus Stack:
+
 Focus Stack
 ^^^^^^^^^^^
 

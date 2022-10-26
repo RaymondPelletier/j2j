@@ -1,3 +1,6 @@
+The Mini-language
+*****************
+
 Syntax and Semantics
 ====================
 
@@ -46,17 +49,17 @@ jertlParseError: line 1: 0 token recognition error at: '''
 Variables
 ^^^^^^^^^
 
-In a matching context unbound variables match whatever data is in the current focus
+In a matching context unbound variables match :ref:`the current focus<Focus Stack>`.
 
 >>> jertl.match('x', True).bindings
 {'x': True}
 
-Once a variable is bound it must match to the same value wherever the variable occurs in the pattern
+If bound, the varialble binding must match the current focus.
 
 >>> jertl.match('[x, x]', [False, False]).bindings
 {'x': False}
 
-if not the match fails
+if not, the match fails,
 
 >>> jertl.match('[x, x]', [4, 4.0]).bindings
 Traceback (most recent call last):
@@ -68,11 +71,11 @@ In a fill context unbound variables are not allowed.
 >>> jertl.fill('[x]')
 Traceback (most recent call last):
 ...
-jertlFillException: x not bound
+jertlFillException: 'x' not bound
 
 Anonymous variables are indicated using an underscore '_'.
 Like regular variables these match anything but do not result in a binding.
-When used multiple times in a pattern they do not have to match to the same value.
+When used multiple times in a pattern they do not have to refer to the same value.
 
 >>> jertl.match('[_, _, _]', [1, 2, 3]).bindings
 {}
@@ -84,24 +87,24 @@ Arrays
 ......
 
 Arrays are represented by a comma seperated list of expressions surrounded by brackets.
-Each expression must match its corresponding item in the data being matched.
+Each expression must match item in the corresponding position of the data being matched.
 
 >>> jertl.match('[1, 2.0, true, null, "string"]', [1, 2.0, True, None, 'string']) is not None
 True
 
-Splat expressions indicate a variable to be bound to a slice of the list being matched.
-These can only occur within a list expression
+Splat expressions indicate a variable which is to be bound to a slice of the list being processed.
+These can only occur within a list expression.
 
 >>> jertl.match('[*before, 3, *after]', [1, 2, 3, 4]).bindings
 {'before': [1, 2], 'after': [4]}
 
 As with non-splatted variables, once it is bound it must match to the same value
-wherever it occurs in the pattern
+wherever it occurs in the pattern.
 
 >>> jertl.match('[*x, y, *x]', [1,2,3,4,1,2,3]).bindings
 {'x': [1, 2, 3], 'y': 4}
 
-The splatted variable does not need to be splatted each time
+Splatted variables does not need to be splatted each time.
 
 >>> jertl.match('[*x, x]', [1,2,3,[1,2,3]]).bindings
 {'x': [1, 2, 3]}
@@ -131,8 +134,8 @@ Objects
 
 The syntax of objects is a superset of that of JSON.
 Key/value pairs are seperated by colons.
-Pairs are surrounded by curly braces "{}"
-Names *must* be a string literal.
+Pairs are surrounded by curly braces "{}".
+Keys *must* be string literals.
 Values can be any expression.
 In addition the last item in an object pattern can be a double splatted variable ("\*\*variable").
 
@@ -140,19 +143,20 @@ In addition the last item in an object pattern can be a double splatted variable
 ...            {'integer': 1, 'boolean': True, 'anything': {'inner': 'object'}, 'list': ['a', 'list']}).bindings
 {'anything': {'inner': 'object'}, 'list': ['a', 'list']}
 
-Double splat variables are bound to whatever key/value patterns which were not tested by the structure pattern.
+Double splatted variables are bound to the key/value pairs of the focus
+which were not referenced in the object pattern.
 
 >>> jertl.match('{"x": x, "y": y, **double_splat}',
 ...            {'x': 1, 'y': 2, 'z': 3, 'name': 'Harry'}).bindings
 {'x': 1, 'y': 2, 'double_splat': {'z': 3, 'name': 'Harry'}}
 
-Once a double splatted is bound it must match to the same value wherever it occurs in the pattern
+Once a double splatted is bound it must match the current focus
 
 >>> jertl.match('[{"x": x, **double_splat}, {"y": y, **double_splat}]',
 ...            [{'x': 1, 'z': 3, 'name': 'Harry'}, {'y': 2, 'z': 3, 'name': 'Harry'}]).bindings
 {'x': 1, 'double_splat': {'z': 3, 'name': 'Harry'}, 'y': 2}
 
-Anonymous variables may be double splatted but this doesn't do anything useful.
+Anonymous variables may be double splatted but this will not do anything useful.
 
 Operations
 ^^^^^^^^^^
@@ -176,8 +180,8 @@ For example
 Targeted matches
 ................
 
-Conjoins and rules, which can match to multiple data structure, explicitly identify which structure to use.
-The targeted match pattern specifies the variable which is bound to the data to be examined
+Conjoins and rules, which can match to multiple data structures,
+explicitly identify which structure to examine.
 
 .. code-block::
 
@@ -195,7 +199,7 @@ Targeted fills
 ..............
 
 Similarly, rules can perform multiple fill operations.
-The targeted fill pattern specifies the variable which is to bound to filled structure.
+The targeted fill pattern specifies a variable to be bound to a filled structure.
 
 .. code-block::
 
@@ -222,8 +226,8 @@ The syntax for collations are a sequence of targeted matches seperated by whites
 Rules
 .....
 
-rule are a sequence of targeted matches seperated by whitespace followed by IMPLIES,
-then a sequence of targetted fills seperated by whitespace
+rules are a sequence of targeted matches seperated by whitespace followed by IMPLIES,
+then a sequence of targetted fills seperated by whitespace.
 
 .. code-block::
 

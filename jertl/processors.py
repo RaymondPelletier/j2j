@@ -9,11 +9,9 @@ from jertl.results import Match, Transformation, Collation, Inference
 class Matcher:
     """Class which compares data to a structure and returns all Matches"""
     def __init__(self, structure):
-        """__init__ Constructor
-
+        """
         Args:
-            structure (str): pattern describing structure to be looked
-                for
+            structure (str): pattern describing structure to be identified
         """
         self._ast          = jab.ast_for_string(structure, 'structure')
         self._instructions = list(jae.emit_match(self._ast))
@@ -24,10 +22,10 @@ class Matcher:
         Args:
             data ((Sequence | Mapping | Number)): Python data structure
                 to examine
-        :yield: All possible Matches
 
-        Returns:
-            Match
+        Yields:
+            :obj:`~.Match`: All possible Matches
+
         """
         interpreter = Interpreter(self._instructions)
         for bindings in interpreter.match_all(data):
@@ -37,10 +35,10 @@ class Matcher:
         """match Matches a structure to data.
 
         Args:
-            data (_type_): Python data structure to match
+            data ((Sequence | Mapping | Number)): Python data structure to match
 
         Returns:
-            Match: (Sequence | Mapping | Number)
+            Optional(:obj:`~.Match`): (Sequence | Mapping | Number)
         """
         for m in self.match_all(data):
             return m
@@ -49,11 +47,9 @@ class Matcher:
 class Filler:
     """Class which performs fills"""
     def __init__(self, structure):
-        """__init__ Constructor
-
+        """
         Args:
-            structure (str): String describing structure to be used for
-                creating new data structures
+            structure (str): pattern describing structure to be used for creating new data
         """
         self._ast = jab.ast_for_string(structure, 'structure')
 
@@ -61,7 +57,7 @@ class Filler:
         """fill Fills structure and returns data with structure variables replaced with their bindings
 
         Args:
-            **bindings (KWArgs): Initial variable bindings
+            **bindings (Dict[str, list | dict | str | Number]): Initial variable bindings
 
         Returns:
             (list | dict | str | Number): data
@@ -72,10 +68,9 @@ class Filler:
 class Transformer:
     """A transformer with compile structure"""
     def __init__(self, transform):
-        """__init__ Compiles transform and returns object capable for performing them
-
+        """
         Args:
-            transform (str): String describing a transform
+            transform (str): pattern describing a transform
         """
         self._ast = jab.ast_for_string(transform, 'transform')
         self._source = self._ast.input
@@ -88,10 +83,10 @@ class Transformer:
         Args:
             data ((list | dict | str | Number)): Data structure to be
                 transformed
-        :yield: All possible transformations
 
-        Returns:
-            Transformation
+        Yields:
+            :obj:`~.Transformation`:  All possible transforms of the sources
+
         """
         interpreter = Interpreter(self._instructions)
         for bindings in interpreter.match_all(data):
@@ -105,8 +100,8 @@ class Transformer:
                 transformed
 
         Returns:
-            (list | dict | str | Number): A Transformation if one was
-            found
+            Optional(:obj:`~.Transformer`):: A Transformation if one was found
+
         """
         for m in self.transform_all(data):
             return m
@@ -115,10 +110,10 @@ class Transformer:
 class Collator:
     """Class which performs collations"""
     def __init__(self, collation):
-        """__init__ Compiles collation
-
+        """
         Args:
             collation (str): pattern describing a collation
+
         """
         self._ast = jab.ast_for_string(collation, 'collation')
         self._toplevel = {m.variable.identifier for m in self._ast}
@@ -128,11 +123,11 @@ class Collator:
         """collate_all Yield all possible collations of data
 
         Args:
-            **bindings (KWArgs): Initial variable bindings
-        :yield: All collations
+            **bindings (Dict[str, list | dict | str | Number]): Initial variable bindings
 
-        Returns:
-            Collation
+        Yields:
+            :obj:`~.Collation`: All possible collations
+
         """
         interpreter = Interpreter(self._instructions)
         for bindings in interpreter.match_all(None, bindings):
@@ -143,10 +138,11 @@ class Collator:
         """collate Find a collation if any
 
         Args:
-            **bindings (KWArgs): Initial variable bindings
+            **bindings (Dict[str, list | dict | str | Number]): Initial variable bindings
 
         Returns:
-            Optional(Collation): the First Collation
+            Optional(:obj:`Collation`): A Collation
+
         """
         for m in self.collate_all(**bindings):
             return m
@@ -155,10 +151,9 @@ class Collator:
 class Rule:
     """Class which finds inferences of a production rule"""
     def __init__(self, rule):
-        """__init__ Compile pattern describing an inference rule
-
+        """
         Args:
-            rule (str): Pattern describing an inference rule
+            rule (str): pattern describing an inference rule
         """
         self._ast = jab.ast_for_string(rule, 'rule_')
         self._toplevel = {m.variable.identifier for m in self._ast.matchers}
@@ -168,11 +163,11 @@ class Rule:
         """infer_all Yield all possible inferences of rule applied to data
 
         Args:
-            **bindings (KWArgs): Initial variable bindings
-        :yield: _description_
+            **bindings (Dict[str, list | dict | str | Number]): Initial variable bindings
 
-        Returns:
-            _type_
+        Yields:
+            :obj:`~.Inference`: All possible inferences
+
         """
         interpreter = Interpreter(self._instructions)
         for bindings in interpreter.match_all(None, bindings):
@@ -184,10 +179,11 @@ class Rule:
         """infer Finds an inference of rule applied to data (if any)
 
         Args:
-            **bindings (KWArgs): Initial variable bindings
+            **bindings (Dict[str, list | dict | str | Number]): Initial variable bindings
 
         Returns:
-            Optional(Inference): An inference
+            Optional(:obj:`~.Inference`): An inference
+
         """
         for m in self.infer_all(**bindings):
             return m

@@ -21,7 +21,7 @@ def _(template, bindings):
     if identifier in bindings:
         return bindings[identifier]
     else:
-        raise JertlFillException(f'{identifier} not bound')
+        raise JertlFillException(f"'{identifier}' not bound")
 
 @construct.register(dict)
 def _(template, bindings):

@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 ########################################################################
-jertl - A minimally viable Python package for processing structured data
+jertl - A minimally viable package for processing structured data
 ########################################################################
 
 Where developers declaratively define and execute common operations on complex data structures.
@@ -18,6 +18,8 @@ Examples
 Matching
 ========
 
+Jertl can be used to verify the structure of data, select nested values, or both.
+
 >>> movie = {"title": "Pinocchio", "MPAA rating": "PG"}
 >>>
 >>> match = jertl.match('{"title": title, "MPAA rating": "PG"}', movie)
@@ -30,6 +32,8 @@ Pinocchio
 Filling
 =======
 
+Jertl can also be used as a template library.
+
 >>> jertl.fill('{"name": name, "age": age, "status": status}',
 ...            name="Ray",
 ...            age=66,
@@ -39,9 +43,11 @@ Filling
 Transforming
 ============
 
->>> ray = {'name': 'Ray', 'age': 66, 'status': 'employed'}
->>>
+Data transformations are defined using representations of the source and target data.
+
 >>> retire = '{"status": "employed", **the_rest} --> {"status": "retired", **the_rest}'
+>>>
+>>> ray = {'name': 'Ray', 'age': 66, 'status': 'employed'}
 >>>
 >>> transformation = jertl.transform(retire, ray)
 >>> transformation.filled
@@ -50,13 +56,15 @@ Transforming
 Collating
 =========
 
->>> jeremy = {'name': 'Jeremy'}
->>> jeff   = {'name': 'Jeff', 'underlings': ['Jimmy', 'Johnny', 'Jeremy', 'Joe']}
->>>
+You can use Jertl to verify relationships between data structures.
+
 >>> supervises = '''
 ...     supervisor ~ {"underlings": [*_, name, *_]}
 ...     employee   ~ {"name": name}
 ...     '''
+>>>
+>>> jeremy = {'name': 'Jeremy'}
+>>> jeff   = {'name': 'Jeff', 'underlings': ['Jimmy', 'Johnny', 'Jeremy', 'Joe']}
 >>>
 >>> collation = jertl.collate(supervises, supervisor=jeff, employee=jeremy)
 >>> collation is not None
@@ -64,6 +72,8 @@ True
 
 Inferring
 =========
+
+Combining all these operations gives you an inference engine.
 
 >>> rule = '''
 ...    //
@@ -107,41 +117,25 @@ Installation
 
    pip install jertl
 
-The Mini-language
-*****************
-
 .. toctree::
    :maxdepth: 3
 
    mini
 
-API
-***
-
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
-   toplevel
-   processors
-   results
-
-Future Directions
-*****************
+   api
 
 .. toctree::
    :maxdepth: 3
 
    future
 
-Under the Hood
-**************
-
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
-   glossary
-   grammar
-   vm
+   under
 
 Credits
 *******
