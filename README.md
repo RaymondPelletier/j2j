@@ -1,4 +1,8 @@
-# jertl - A minimally viable Python package for processing structured data
+<!-- jertl documentation master file, created by
+sphinx-quickstart on Mon Oct 17 12:15:46 2022.
+You can adapt this file completely to your liking, but it should at least
+contain the root `toctree` directive. -->
+# jertl - A minimally viable package for processing structured data
 
 Where developers declaratively define and execute common operations on complex data structures.
 
@@ -7,6 +11,8 @@ Operations are specified using a mini-language in which target structures are vi
 ## Examples
 
 ### Matching
+
+Jertl can be used to verify the structure of data, select nested values, or both.
 
 ```python
 >>> movie = {"title": "Pinocchio", "MPAA rating": "PG"}
@@ -21,6 +27,8 @@ Pinocchio
 
 ### Filling
 
+Jertl can also be used as a template library.
+
 ```python
 >>> jertl.fill('{"name": name, "age": age, "status": status}',
 ...            name="Ray",
@@ -31,10 +39,12 @@ Pinocchio
 
 ### Transforming
 
+Data transformations are defined using representations of the source and target data.
+
 ```python
->>> ray = {'name': 'Ray', 'age': 66, 'status': 'employed'}
->>>
 >>> retire = '{"status": "employed", **the_rest} --> {"status": "retired", **the_rest}'
+>>>
+>>> ray = {'name': 'Ray', 'age': 66, 'status': 'employed'}
 >>>
 >>> transformation = jertl.transform(retire, ray)
 >>> transformation.filled
@@ -43,14 +53,16 @@ Pinocchio
 
 ### Collating
 
+You can use Jertl to verify relationships between data structures.
+
 ```python
->>> jeremy = {'name': 'Jeremy'}
->>> jeff   = {'name': 'Jeff', 'underlings': ['Jimmy', 'Johnny', 'Jeremy', 'Joe']}
->>>
 >>> supervises = '''
 ...     supervisor ~ {"underlings": [*_, name, *_]}
 ...     employee   ~ {"name": name}
 ...     '''
+>>>
+>>> jeremy = {'name': 'Jeremy'}
+>>> jeff   = {'name': 'Jeff', 'underlings': ['Jimmy', 'Johnny', 'Jeremy', 'Joe']}
 >>>
 >>> collation = jertl.collate(supervises, supervisor=jeff, employee=jeremy)
 >>> collation is not None
@@ -58,6 +70,8 @@ True
 ```
 
 ### Inferring
+
+Combining all these operations gives you an inference engine.
 
 ```python
 >>> rule = '''
@@ -101,7 +115,3 @@ True
 ```bash
 pip install jertl
 ```
-
-## License
-
-`jertl` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
