@@ -13,7 +13,7 @@ sys.path.append(str(pathlib.Path('..').resolve()))
 project = 'jertl'
 copyright = '2022, Ray Pelletier'
 author = 'Ray Pelletier'
-release = '0.0.2'
+release = '0.1.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
