@@ -18,3 +18,11 @@ Used as base of jertl mini-language
 
 | File: `json.g4 <https://github.com/antlr/grammars-v4/blob/master/json/JSON.g4>`_
 | Repository: `antlr <https://github.com/antlr>`_ / `grammars-g4 <https://github.com/antlr/grammars-v4>`_
+
+dataclasses
+-----------
+
+Backport of dataclasses required to use jertl in Python 3.6
+
+| Home Page: `github <https://github.com/ericvsmith/dataclasses>`_
+| License: `Apache Software License <https://opensource.org/licenses/Apache-2.0>`_
