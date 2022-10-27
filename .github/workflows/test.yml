@@ -4,7 +4,7 @@ name: Test On Pull Request
 
 on:
   push:
-    branches: [ !main ] # for testing workflow, remove later to keep CI/CD minutes down
+    branches: [ '!main' ]
   pull_request:
     branches: [ main ]
 
