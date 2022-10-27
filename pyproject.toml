@@ -31,7 +31,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ["antlr4-python3-runtime"]
+dependencies = [
+    'antlr4-python3-runtime == 4.11.1',
+    'dataclasses == 0.8; python_version == "3.6"'
+]
 dynamic = ["version"]
 
 [project.urls]
