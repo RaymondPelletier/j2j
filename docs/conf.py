@@ -2,6 +2,9 @@ import sys
 import pathlib
 sys.path.append(str(pathlib.Path('..').resolve()))
 
+# Use Semver maintained by hatch
+import jertl.__about__
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -10,10 +13,10 @@ sys.path.append(str(pathlib.Path('..').resolve()))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'jertl'
+project   = 'jertl'
 copyright = '2022, Ray Pelletier'
-author = 'Ray Pelletier'
-release = '0.1.0'
+author    = 'Ray Pelletier'
+release   = jertl.__about__.__version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -28,13 +31,8 @@ autodoc_member_order = 'bysource'
 napoleon_include_init_with_doc = True
 napoleon_type_aliases = None
 
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# html_theme = "nature"
 html_theme = "sphinx_rtd_theme"
-html_theme_options = {
-    "sidebarwidth": 300
-}
 html_static_path = ['_static']
