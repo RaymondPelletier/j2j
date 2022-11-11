@@ -1,19 +1,18 @@
 from   dataclasses import dataclass
 from   functools   import singledispatch
-from   typing      import Dict, Any
+from   typing      import Dict, List, Any
 from   copy        import copy
 
 from   jertl.engine.opcodes   import OpCode
-from   jertl.engine.masks     import MaskedList, MaskedDict, freeze
+from   jertl.engine.masks     import MaskedList, MaskedDict, freeze, snapshot
 from   jertl.exceptions       import JertlInterpreterException
 
 @dataclass
 class Context:
-    identifier: str
-    focus:      MaskedList
-    bindings:   Dict[str, Any]
-    ic:         int
-    fc:         int
+    identifier:  str
+    bindings:    Dict[str, Any]
+    focus_stack: List[Any]
+    ic:          int
 
 @singledispatch
 def values_match(a, b):
@@ -59,14 +58,14 @@ class Interpreter:
 
         if len(self.context_stack) > 0:
             context = self.context_stack[-1]
-            if len(context.focus) == 0:
+            if len(context.focus_stack[-1]) == 0:
                 self.context_stack.pop()
                 self.backtrack()
             else:
                 context.bindings[context.identifier].widen()
-                context.focus.pop()
-                self.focus_stack = self.focus_stack[:context.fc]
-                self.focus_stack[-1] = context.focus.snapshot()
+                context.focus_stack[-1].pop()
+                self.focus_stack = copy(context.focus_stack)
+                self.focus_stack[-1] = context.focus_stack[-1].snapshot()
                 self.ic = context.ic
                 self.bindings = copy(self.bindings)
         else:
@@ -78,7 +77,7 @@ class Interpreter:
             ic    = self.ic
             fc    = len(self.focus_stack) - 1
             focus = self.focus_stack[-1] if fc >= 0 else '<NO-FOCUS>'
-            print(f'ic: {ic:3}, focus[{fc}]:{focus} -- {self.instructions[ic]}')
+            print(f'ic: {ic:3}, focus[{fc}]:{self.instructions[ic]} -- {focus}')
 
 
     def match_all(self, focus, bindings=None):
@@ -105,15 +104,14 @@ class Interpreter:
                 self.bindings[instruction[1]] = self.focus_stack[-1]
 
             elif opcode == OpCode.BIND_VARARGS:
-                snapshot = self.focus_stack[-1].snapshot()
-                snapshot.collapse()
-                self.bindings[instruction[1]] = snapshot
+                binding = self.focus_stack[-1].snapshot()
+                binding.collapse()
+                self.bindings[instruction[1]] = binding
 
                 context = Context(identifier=instruction[1],
-                                focus=self.focus_stack[-1].snapshot(),
-                                bindings=copy(self.bindings),
-                                ic=self.ic,
-                                fc=len(self.focus_stack))
+                                  focus_stack=[snapshot(focus) for focus in self.focus_stack],
+                                  bindings=copy(self.bindings),
+                                  ic=self.ic)
 
                 self.context_stack.append(context)
 

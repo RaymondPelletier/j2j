@@ -90,12 +90,12 @@ class MaskedDict(collections.abc.Mapping):
                 return self.__next__()
             else:
                 return candidate_next
-            
+
     def __iter__(self):
         return self.Iterator(self)
 
     def __repr__(self):
-        return repr({k: v for k, v in self.backing_mapping.items() 
+        return repr({k: v for k, v in self.backing_mapping.items()
                           if k not in self.masked_keys})
 
 
@@ -110,3 +110,16 @@ def _(masked_list):
 @freeze.register(MaskedDict)
 def _(masked_dict):
     return masked_dict.freeze()
+
+
+@singledispatch
+def snapshot(value):
+    return value
+
+@snapshot.register(MaskedList)
+def _(masked_list):
+    return masked_list.snapshot()
+
+@snapshot.register(MaskedDict)
+def _(masked_dict):
+    return masked_dict.snapshot()
