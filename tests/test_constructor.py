@@ -30,7 +30,7 @@ tests = [['x',
 
 @pytest.mark.parametrize('pattern,bindings,result', tests)
 def test_ast_for_string(pattern, bindings, result):
-    structure = ast_for_string(pattern, 'structure')
+    structure = ast_for_string(pattern, 'toplevel_structure')
     constructed = construct(structure, bindings)
     assert constructed == result
     ensure_purity(constructed)

@@ -102,7 +102,7 @@ def test_deep_backtracking():
         ]
     ]
 
-    pattern = '[*_, [*_, [*_, i, *_], *_], *_], *_]'
+    pattern = '[*_, [*_, [*_, i, *_], *_], *_]'
 
     for match_, i in zip(jertl.match_all(pattern, data), range(500)):
         assert match_.bindings['i'] == i
