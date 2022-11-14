@@ -70,6 +70,9 @@ class JertlBuilder(helpers.ASTBuilder, jp.Listener):
     def exitVariable(self, ctx):
         ctx.AST = jar.Variable(ctx.IDENTIFIER().getText())
 
+    def exitToplevel_structure(self, ctx):
+        ctx.AST = ctx.structure().AST
+
     def dequote(self, s):
         if s.endswith('"'):
             s = s[:-1]

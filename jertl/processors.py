@@ -13,7 +13,7 @@ class Matcher:
         Args:
             structure (str): pattern describing structure to be identified
         """
-        self._ast          = jab.ast_for_string(structure, 'structure')
+        self._ast          = jab.ast_for_string(structure, 'toplevel_structure')
         self._instructions = list(jae.emit_match(self._ast))
 
     def match_all(self, data):
@@ -51,7 +51,7 @@ class Filler:
         Args:
             structure (str): pattern describing structure to be used for creating new data
         """
-        self._ast = jab.ast_for_string(structure, 'structure')
+        self._ast = jab.ast_for_string(structure, 'toplevel_structure')
 
     def fill(self, **bindings):
         """fill Fills structure and returns data with structure variables replaced with their bindings
