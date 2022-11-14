@@ -8,6 +8,15 @@ else:
 # This class defines a complete listener for a parse tree produced by JertlParser.
 class JertlListener(ParseTreeListener):
 
+    # Enter a parse tree produced by JertlParser#toplevel_structure.
+    def enterToplevel_structure(self, ctx:JertlParser.Toplevel_structureContext):
+        pass
+
+    # Exit a parse tree produced by JertlParser#toplevel_structure.
+    def exitToplevel_structure(self, ctx:JertlParser.Toplevel_structureContext):
+        pass
+
+
     # Enter a parse tree produced by JertlParser#transform.
     def enterTransform(self, ctx:JertlParser.TransformContext):
         pass

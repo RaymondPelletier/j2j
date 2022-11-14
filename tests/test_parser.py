@@ -6,6 +6,7 @@ positive_tests = [['structure', '{"an": "object"}'],
                   ['structure', '["a", 4, "element", array]'],
                   ['structure', '"atom"'],
                   ['structure', 'variable'],
+
                   ['array',     '[1, 2, True]'],
                   ['array',     '[]'],
                   ['array',     '[1, "have a", *splat, "or", *two]'],
@@ -16,6 +17,12 @@ positive_tests = [['structure', '{"an": "object"}'],
                   ['atom',      '3.14159'],
                   ['atom',      '"string"'],
                   ['obj',       '{"integer": 1, "list": [a, 4.4, *spread], **kw}'],
+
+                  ['toplevel_structure', '{"an": "object"}'],
+                  ['toplevel_structure', '["a", 4, "element", array]'],
+                  ['toplevel_structure', '"atom"'],
+                  ['toplevel_structure', 'variable'],
+
                   ['transform', '{"integer": 1, "list": [a, 4.4, *spread], **kw} --> True'],
                   ['matcher',   'thing ~ {"integer": 1, "list": [a, 4.4, *spread], **kw}'],
                   ['setter',    'result := {"integer": 1}'],
@@ -46,3 +53,29 @@ def test_null_collation():
 
 def test_null_rule():
     parse_string('-->', 'rule_')
+
+negative_tests = [['toplevel_structure', '{"an": "object"}_'],
+                  ['toplevel_structure', '["a", 4, "element", array]['],
+                  ['toplevel_structure', '\'atom\''],
+                  ['toplevel_structure', 'var iable'],
+
+                  ['transform', '{"integer": 1, "list": [a, 4.4, *spread], **kw} --> True;'],
+                  ['collation', '''
+                                    thing1 ~ {"integer": 1, "list": [_, 4.4, *spread], **kw}
+                                    thing2 ~ thing1
+                                    thing3 ~ [thing1, thing2] -->
+                                '''],
+                  ['rule_',     '''
+                                    thing1 ~ {"integer": 1, "list": [a, 4.4, *spread], **kw}
+                                    thing2 ~ thing1
+                                    thing3 ~ [thing1, thing2]
+                                  -->
+                                    thong1 := {"integer": 2, "list": [thing3, 4.4, *spread], **kw}
+                                    ()
+                                ''']]
+
+
+@pytest.mark.parametrize('rule,source', negative_tests)
+def test_invalid_input(rule, source):
+    with pytest.raises(JertlSyntaxError):
+        parse_string(source, rule)

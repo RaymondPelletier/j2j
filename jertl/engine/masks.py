@@ -51,7 +51,7 @@ class MaskedList(collections.abc.Sequence):
 class MaskedDict(collections.abc.Mapping):
     def __init__(self, backing_mapping, masked_keys=None):
         self.backing_mapping = backing_mapping
-        self.masked_keys = set() if masked_keys is None else masked_keys
+        self.masked_keys = set() if masked_keys is None else copy.copy(masked_keys)
 
     def __len__(self):
         return len(self.backing_mapping) - len(self.masked_keys)
@@ -74,7 +74,7 @@ class MaskedDict(collections.abc.Mapping):
         return value
 
     def snapshot(self):
-        return MaskedDict(self.backing_mapping, copy.copy(self.masked_keys))
+        return MaskedDict(self.backing_mapping, self.masked_keys)
 
     def freeze(self):
         return {**self}

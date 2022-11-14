@@ -4,16 +4,20 @@ options {
    language = Python3;
 }
 
+toplevel_structure
+   : structure EOF
+   ;
+
 transform
-   : structure IMPLIES structure
+   : structure IMPLIES structure EOF
    ;
 
 collation
-   : matcher*
+   : matcher* EOF
    ;
 
 rule_
-   : matcher* IMPLIES setter*
+   : matcher* IMPLIES setter* EOF
    ;
 
 matcher
