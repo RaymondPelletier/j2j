@@ -69,7 +69,7 @@ def optimize_splats(instructions):
     splat = None
 
     #
-    # This is ugly and will remain so intentionlly as incentive to use jertl for peephole optimization
+    # This is ugly and will remain so intentionally as incentive to use jertl for peephole optimization
     # (AKA the "Eat my own dogfood initiative")
     #
     for instruction in instructions:
@@ -105,8 +105,6 @@ def emit_collation(collation, initial_bindings):
     for matcher in collation:
         yield OpCode.FOCUS_ON_BINDING, matcher.variable.identifier
         yield from optimize_splats(emit(matcher.structure, initial_bindings))
-
-    for _ in collation:
         yield OpCode.POP_FOCUS,
 
     yield OpCode.YIELD_BINDINGS,
